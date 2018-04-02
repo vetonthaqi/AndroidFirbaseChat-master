@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.arvisiontech.firebasechat.R;
+
+import co.arvisiontech.simplechatfirebase.SpeachActivity;
 import co.arvisiontech.simplechatfirebase.core.login.LoginContract;
 import co.arvisiontech.simplechatfirebase.core.login.LoginPresenter;
 import co.arvisiontech.simplechatfirebase.ui.activities.RegisterActivity;
@@ -105,7 +107,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     public void onLoginSuccess(String message) {
         mProgressDialog.dismiss();
         Toast.makeText(getActivity(), "Logged in successfully", Toast.LENGTH_SHORT).show();
-        UserListingActivity.startActivity(getActivity(),
+        SpeachActivity.startActivity(getActivity(),
                 Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 

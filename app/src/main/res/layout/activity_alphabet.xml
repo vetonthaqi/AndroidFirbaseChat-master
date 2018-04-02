@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/relative_alphabet_1"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/rounded_edges"
+        android:padding="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <!-- Thumbnail Image -->
+        <ImageView
+            android:id="@+id/thumbnail1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_alphabet"
+            android:layout_centerVertical="true"
+            android:paddingEnd="20dp"
+            />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/view_line"
+            android:layout_toEndOf="@+id/thumbnail1"/>
+
+        <!-- Movie Title -->
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/line1"
+            android:layout_toRightOf="@+id/line1"
+            android:text="Alphabet sign"
+            android:paddingStart="15dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"/>
+
+        <!-- Rating -->
+        <TextView
+            android:id="@+id/content1"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title1"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/line1"
+            android:paddingStart="15dp"
+            android:text="Chat with people with gloves and text chat"/>
+
+        <TextView
+            android:id="@+id/btn_alphabet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/continueTextColor"
+            android:drawableEnd="@drawable/ic_continue"
+            android:layout_below="@id/content1"
+            android:background="@color/btnBackground"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_alphabet_2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/rounded_edges"
+        android:padding="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true">
+
+        <!-- Thumbnail Image -->
+        <ImageView
+            android:id="@+id/thumbnail2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_word"
+            android:layout_centerVertical="true"
+            android:paddingEnd="20dp"/>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/thumbnail2"
+            android:background="@color/view_line"/>
+
+        <!-- Movie Title -->
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/line2"
+            android:paddingStart="15dp"
+            android:text="word sign"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"/>
+
+        <!-- Rating -->
+        <TextView
+            android:id="@+id/content2"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title2"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/line2"
+            android:paddingStart="15dp"
+            android:text="Chat with people with gloves and text chat"/>
+
+        <TextView
+            android:id="@+id/btn_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/continueTextColor"
+            android:drawableEnd="@drawable/ic_continue"
+            android:layout_below="@id/content2"
+            android:background="@color/btnBackground"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

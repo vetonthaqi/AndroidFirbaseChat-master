@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arvisiontech.firebasechat">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
     <application
         android:name="co.arvisiontech.simplechatfirebase.FirebaseChatMainApp"
         android:allowBackup="true"
@@ -28,6 +30,10 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="co.arvisiontech.simplechatfirebase.SpeachActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name="co.arvisiontech.simplechatfirebase.ui.activities.UserListingActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -35,6 +41,19 @@
             android:name="co.arvisiontech.simplechatfirebase.ui.activities.ChatActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.arvisiontech.simplechatfirebase.SignsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="co.arvisiontech.simplechatfirebase.AlphabetActivity"/>
+
+        <activity android:name="co.arvisiontech.simplechatfirebase.TextToSpeachActivity" />
+        <activity android:name="co.arvisiontech.simplechatfirebase.SignsAlphabetActivity" />
+        <activity android:name="co.arvisiontech.simplechatfirebase.SignsWordsActivity" />
+
+
+        <activity android:name="co.arvisiontech.simplechatfirebase.MainActivity" />
+        <activity android:name="co.arvisiontech.simplechatfirebase.DeviceListActivity" />
 
         <service android:name="co.arvisiontech.simplechatfirebase.fcm.MyFirebaseMessagingService">
             <intent-filter>
