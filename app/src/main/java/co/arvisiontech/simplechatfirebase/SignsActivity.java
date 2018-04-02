@@ -20,7 +20,7 @@ public class SignsActivity extends AppCompatActivity {
     private TextView mBackSigns;
 
     private Button mContinueButton;
-
+///Test Giti
     Point p;
 
     @Override
