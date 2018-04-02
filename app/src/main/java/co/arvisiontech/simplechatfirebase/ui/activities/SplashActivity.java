@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.arvisiontech.firebasechat.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import co.arvisiontech.simplechatfirebase.SpeachActivity;
+
 public class SplashActivity extends AppCompatActivity {
     private static final int SPLASH_TIME_MS = 2000;
     private Handler mHandler;
@@ -25,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
                 // check if user is already logged in or not
                 if (FirebaseAuth.getInstance().getCurrentUser() != null) {
                     // if logged in redirect the user to user listing activity
-                    UserListingActivity.startActivity(SplashActivity.this);
+                    SpeachActivity.startActivity(SplashActivity.this);
                 } else {
                     // otherwise redirect the user to login activity
                     LoginActivity.startIntent(SplashActivity.this);
