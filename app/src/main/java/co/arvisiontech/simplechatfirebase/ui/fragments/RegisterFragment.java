@@ -18,6 +18,7 @@ import co.arvisiontech.simplechatfirebase.core.registration.RegisterContract;
 import co.arvisiontech.simplechatfirebase.core.registration.RegisterPresenter;
 import co.arvisiontech.simplechatfirebase.core.users.add.AddUserContract;
 import co.arvisiontech.simplechatfirebase.core.users.add.AddUserPresenter;
+import co.arvisiontech.simplechatfirebase.ui.activities.LoginActivity;
 import co.arvisiontech.simplechatfirebase.ui.activities.UserListingActivity;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -110,7 +111,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener, 
     public void onAddUserSuccess(String message) {
         mProgressDialog.dismiss();
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-        UserListingActivity.startActivity(getActivity(),
+        LoginActivity.startActivity(getActivity(),
                 Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 

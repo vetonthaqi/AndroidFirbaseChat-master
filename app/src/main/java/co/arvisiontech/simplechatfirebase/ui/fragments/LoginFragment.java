@@ -1,6 +1,7 @@
 package co.arvisiontech.simplechatfirebase.ui.fragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import com.arvisiontech.firebasechat.R;
 import co.arvisiontech.simplechatfirebase.SpeachActivity;
 import co.arvisiontech.simplechatfirebase.core.login.LoginContract;
 import co.arvisiontech.simplechatfirebase.core.login.LoginPresenter;
+import co.arvisiontech.simplechatfirebase.ui.activities.LoginActivity;
 import co.arvisiontech.simplechatfirebase.ui.activities.RegisterActivity;
 import co.arvisiontech.simplechatfirebase.ui.activities.UserListingActivity;
 
