@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
         mHandler.postDelayed(mRunnable, SPLASH_TIME_MS);
     }
 
-    /*@Override
+    @Override
     protected void onPause() {
         super.onPause();
         mHandler.removeCallbacks(mRunnable);
@@ -49,5 +49,5 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         mHandler.postDelayed(mRunnable, SPLASH_TIME_MS);
-    }*/
+    }
 }

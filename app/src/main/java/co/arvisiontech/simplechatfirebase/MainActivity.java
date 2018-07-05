@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -66,8 +67,17 @@ public class MainActivity extends AppCompatActivity {
                     recDataString.append(readMessage);      								//keep appending to string until ~
                     int endOfLineIndex = recDataString.indexOf(";");                    // determine the end-of-line
                     if (endOfLineIndex > 0) {                                           // make sure there data before ~
-                        String dataInPrint = recDataString.substring(0, endOfLineIndex);    // extract string
-                        txtString.setText("Data Received = " + dataInPrint);
+                        String dataInPrint = recDataString.substring(0, endOfLineIndex);
+
+                        String[] splitedString = dataInPrint.split(",");
+
+                        Log.e("CHECK STRING:",splitedString[splitedString.length - 1]);
+                        if ((splitedString[splitedString.length - 1].isEmpty() ||splitedString[splitedString.length - 1].contains(" "))) {
+                            txtString.setText("Please livriti gishtat");
+                        } else {
+                            txtString.setText(splitedString[splitedString.length - 1]);
+                        }
+
                         int dataLength = dataInPrint.length();							//get length of data received
                         txtStringLength.setText("String Length = " + String.valueOf(dataLength));
 

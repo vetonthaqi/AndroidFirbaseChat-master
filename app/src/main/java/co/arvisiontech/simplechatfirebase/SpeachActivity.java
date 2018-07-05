@@ -4,20 +4,29 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.arvisiontech.firebasechat.R;
 
+import co.arvisiontech.simplechatfirebase.core.logout.LogoutContract;
 import co.arvisiontech.simplechatfirebase.core.logout.LogoutPresenter;
+import co.arvisiontech.simplechatfirebase.ui.activities.LoginActivity;
 import co.arvisiontech.simplechatfirebase.ui.activities.UserListingActivity;
 
-public class SpeachActivity extends AppCompatActivity {
+public class SpeachActivity extends AppCompatActivity implements LogoutContract.View {
 
+    private Toolbar mToolbar;
+    private TabLayout mTabLayoutUserListing;
+    private ViewPager mViewPagerUserListing;
     private RelativeLayout mRelativeSpeach1, mRelativeSpeach2, mRelativeSpeach3;
 
     private LogoutPresenter mLogoutPresenter;
@@ -69,6 +78,16 @@ public class SpeachActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bindViews();
+        mLogoutPresenter = new LogoutPresenter(this);
+    }
+
+    private void bindViews() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTabLayoutUserListing = (TabLayout) findViewById(R.id.tab_layout_user_listing);
+        mViewPagerUserListing = (ViewPager) findViewById(R.id.view_pager_user_listing);
+        setSupportActionBar(mToolbar);
     }
 
     @Override
@@ -105,5 +124,17 @@ public class SpeachActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    @Override
+    public void onLogoutSuccess(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        LoginActivity.startIntent(this,
+                Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
+    @Override
+    public void onLogoutFailure(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

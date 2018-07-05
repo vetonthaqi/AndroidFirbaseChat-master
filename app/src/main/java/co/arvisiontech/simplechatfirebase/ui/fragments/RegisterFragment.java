@@ -88,6 +88,14 @@ public class RegisterFragment extends Fragment implements View.OnClickListener, 
         String emailId = mETxtEmail.getText().toString();
         String password = mETxtPassword.getText().toString();
 
+        if (emailId.isEmpty()) {
+            Toast.makeText(getContext(), "Email cannot be blank", Toast.LENGTH_LONG).show();
+            return;
+        } else if (password.isEmpty()) {
+            Toast.makeText(getContext(), "Password cannot be blank", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         mRegisterPresenter.register(getActivity(), emailId, password);
         mProgressDialog.show();
     }

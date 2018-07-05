@@ -97,6 +97,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
         String emailId = mETxtEmail.getText().toString();
         String password = mETxtPassword.getText().toString();
 
+        if (emailId.isEmpty()) {
+            Toast.makeText(getContext(), "Email cannot be blank", Toast.LENGTH_LONG).show();
+            return;
+        } else if (password.isEmpty()) {
+            Toast.makeText(getContext(), "Password cannot be blank", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         mLoginPresenter.login(getActivity(), emailId, password);
         mProgressDialog.show();
     }
