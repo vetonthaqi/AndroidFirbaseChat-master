@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Log.e("CHECK STRING:",splitedString[splitedString.length - 1]);
                         if ((splitedString[splitedString.length - 1].isEmpty() ||splitedString[splitedString.length - 1].contains(" "))) {
-                            txtString.setText("Please livriti gishtat");
+                            txtString.setText("Please move fingers...");
                         } else {
                             txtString.setText(splitedString[splitedString.length - 1]);
                         }

@@ -21,10 +21,11 @@
         android:id="@+id/buttonOff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/buttonOn"
-        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonOn"
+        android:layout_toEndOf="@+id/testView1"
+        android:layout_toRightOf="@+id/testView1"
         android:text="LED OFF"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/sensorView0"
@@ -33,7 +34,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="196dp"
         android:text="Sensor 0 Voltage = ????"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/sensorView1"
@@ -42,7 +44,8 @@
         android:layout_below="@+id/sensorView0"
         android:layout_centerHorizontal="true"
         android:text="Sensor 1 Voltage = ????"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/sensorView2"
@@ -51,7 +54,8 @@
         android:layout_below="@+id/sensorView1"
         android:layout_centerHorizontal="true"
         android:text="Sensor 2 Voltage = ????"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/sensorView3"
@@ -60,21 +64,19 @@
         android:layout_below="@+id/sensorView2"
         android:layout_centerHorizontal="true"
         android:text="Sensor 3 Voltage = ????"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textViewShow"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/sensorView0"
-        android:layout_below="@+id/buttonOn"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="52dp"
-        android:layout_toEndOf="@+id/buttonOn"
-        android:text="TextView"
-        android:layout_alignRight="@+id/sensorView0"
-        android:layout_toRightOf="@+id/buttonOn"
-        android:layout_marginLeft="11dp" />
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:text="Make signs with glove"
+        android:textSize="30dp"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/testView1"
@@ -82,15 +84,18 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/txtString"
         android:text=""
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/txtString"
-        android:layout_width="wrap_content"
+        android:layout_below="@id/textViewShow"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignLeft="@+id/testView1"
         android:layout_alignParentBottom="true"
-        android:text=""
-        android:textSize="15sp" />
+        android:hint="Please move fingers..."
+        android:textSize="50sp"
+        android:gravity="center"/>
 
 </RelativeLayout>
